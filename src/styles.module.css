@@ -1,0 +1,42 @@
+.remember {
+  --background: #fff;
+  --primary-text-color: #111;
+  --secondary-text-color: #333;
+  --font-stack: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, Helvetica, 'Segoe UI', Arial, sans-serif;
+
+  background-color: var(--background);
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-family: var(--font-stack);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.rememberTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.rememberSubtitle {
+  color: var(--secondary-text-color);
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+
+.rememberForm {
+  margin-top: 0.75rem;
+  display: flex;
+}
+
+.rememberInput {
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  flex-grow: 1;
+  font-family: var(--font-stack);
+  font-size: 1rem;
+}
+
+.rememberButton {
+  width: 4rem;
+}
