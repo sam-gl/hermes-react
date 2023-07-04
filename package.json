@@ -1,7 +1,7 @@
 {
-  "name": "hermes-react",
+  "name": "@samgl/hermes-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple email newsletter subscription forms for your app.",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
