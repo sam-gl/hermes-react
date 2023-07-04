@@ -1,16 +1,17 @@
+import React from "react";
 import styles from "./styles.module.css";
 
-const Remember = () => {
+const Hermes = () => {
   return (
-    <div className={styles.remember}>
-      <div className={styles.rememberTitle}>Stay updated with a weekly update newsletter</div>
-      <div className={styles.rememberSubtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis blanditiis corporis qui eligendi, odit harum obcaecati laudantium eos quas excepturi.</div>
-      <form className={styles.rememberForm}>
-        <input className={styles.rememberInput} type="email" placeholder="youremail@example.com" />
-        <button className={styles.rememberButton}>yo</button>
+    <div className={styles.hermes}>
+      <div className={styles.hermesTitle}>Stay updated with a weekly update newsletter</div>
+      <div className={styles.hermesSubtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis blanditiis corporis qui eligendi, odit harum obcaecati laudantium eos quas excepturi.</div>
+      <form className={styles.hermesForm}>
+        <input className={styles.hermesInput} type="email" placeholder="youremail@example.com" />
+        <button className={styles.hermesButton}>yo</button>
       </form>
     </div>
   );
 }
 
-export default Remember;
+export default Hermes;

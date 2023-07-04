@@ -1,4 +1,4 @@
-.remember {
+.hermes {
   --background: #fff;
   --primary-text-color: #111;
   --secondary-text-color: #333;
@@ -12,24 +12,24 @@
   border-radius: 12px;
 }
 
-.rememberTitle {
+.hermesTitle {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.rememberSubtitle {
+.hermesSubtitle {
   color: var(--secondary-text-color);
   margin-top: 0.3rem;
   font-size: 0.95rem;
   line-height: 1.3rem;
 }
 
-.rememberForm {
+.hermesForm {
   margin-top: 0.75rem;
   display: flex;
 }
 
-.rememberInput {
+.hermesInput {
   box-sizing: border-box;
   padding: 0.8rem 1rem;
   flex-grow: 1;
@@ -37,6 +37,6 @@
   font-size: 1rem;
 }
 
-.rememberButton {
+.hermesButton {
   width: 4rem;
 }
