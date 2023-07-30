@@ -3,40 +3,65 @@
   --primary-text-color: #111;
   --secondary-text-color: #333;
   --font-stack: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, Helvetica, 'Segoe UI', Arial, sans-serif;
+  --color-subtle: #f0ebf5;
+  --color-mid: #8279e0;
+  --color-bold: #6f00ff;
 
+  font-size: 16px;
+  font-family: var(--font-stack);
   background-color: var(--background);
   color: var(--primary-text-color);
-  font-size: 1rem;
-  font-family: var(--font-stack);
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 1.5em;
+  border-radius: 0.75em;
 }
 
 .hermesTitle {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 600;
 }
 
 .hermesSubtitle {
   color: var(--secondary-text-color);
-  margin-top: 0.3rem;
-  font-size: 0.95rem;
-  line-height: 1.3rem;
+  margin-top: 0.3em;
+  font-size: 0.95em;
+  line-height: 1.3em;
 }
 
 .hermesForm {
-  margin-top: 0.75rem;
+  margin-top: 0.75em;
   display: flex;
 }
 
 .hermesInput {
   box-sizing: border-box;
-  padding: 0.8rem 1rem;
+  padding: 0.8em 1em;
   flex-grow: 1;
   font-family: var(--font-stack);
-  font-size: 1rem;
+  font-size: 1em;
+  border: 1px solid var(--color-subtle);
+  border-right: none;
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.hermesInput:focus {
+  outline: none;
+  border: 1px solid var(--color-bold);
+  border-right: none;
 }
 
 .hermesButton {
-  width: 4rem;
+  width: 5em;
+  border: none;
+  background: var(--color-bold);
+  color: var(--color-subtle);
+  font-family: var(--font-stack);
+  border-radius: 0 0.5em 0.5em 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease-out;
+}
+
+.hermesButton:hover {
+  background: var(--color-mid);
 }
