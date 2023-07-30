@@ -14,18 +14,22 @@ const Hermes = (props: HermesInterface): ReactElement  => {
   const submitForm = async (event: SyntheticEvent) => {
     event.preventDefault();
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email })
-    });
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
 
-    const parsedResponse = await response.json();
+      const parsedResponse = await response.json();
 
-    console.log(parsedResponse);
-    return parsedResponse;
+      console.log(parsedResponse);
+      return parsedResponse;
+    } catch(error: any) {
+      console.error(error);
+    }
   }
 
   const handleForm = (event: ChangeEvent<HTMLInputElement>) => {
