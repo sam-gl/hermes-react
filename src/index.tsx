@@ -1,51 +1,35 @@
-import React, { ChangeEvent, ReactElement, SyntheticEvent, useState } from "react";
+import React, { ReactElement, useState } from "react";
 import styles from "./styles.module.css";
+import Subscribe from "./Subscribe";
+import GoToInbox from "./GoToInbox";
+import Error from "./Error";
 
-interface HermesInterface {
-  title: string,
-  subtitle: string,
-  endpoint: string
-};
+const Hermes = (props: HermesInterface): ReactElement => {
+  const [status, setStatus] = useState<statuses>("unfilled");
+  const [email, setEmail] = useState<string>("");
 
-const Hermes = (props: HermesInterface): ReactElement  => {
-  const [ email, setEmail ] = useState('');
-  const { title, subtitle, endpoint } = props;
+  const renderStage = (status: statuses) => {
+    switch (status) {
+      case "unfilled":
+      case "loading":
+        return (
+          <Subscribe
+            email={email}
+            setEmail={setEmail}
+            setStatus={setStatus}
+            {...props}
+          />
+        );
 
-  const submitForm = async (event: SyntheticEvent) => {
-    event.preventDefault();
+      case "finished":
+        return <GoToInbox email={email} />;
 
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email })
-      });
-
-      const parsedResponse = await response.json();
-
-      console.log(parsedResponse);
-      return parsedResponse;
-    } catch(error: any) {
-      console.error(error);
+      case "error":
+        return <Error />;
     }
-  }
+  };
 
-  const handleForm = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.currentTarget.value);
-  }
-
-  return (
-    <div className={styles.hermes}>
-      <div className={styles.hermesTitle}>{title}</div>
-      <div className={styles.hermesSubtitle}>{subtitle}</div>
-      <form className={styles.hermesForm} onSubmit={submitForm}>
-        <input className={styles.hermesInput} type="email" placeholder="youremail@example.com" onChange={handleForm} value={email} />
-        <button className={styles.hermesButton}>Join</button>
-      </form>
-    </div>
-  );
-}
+  return <div className={styles.hermes}>{renderStage(status)}</div>;
+};
 
 export default Hermes;

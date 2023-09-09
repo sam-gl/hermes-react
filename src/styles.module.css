@@ -2,7 +2,8 @@
   --background: #fff;
   --primary-text-color: #111;
   --secondary-text-color: #333;
-  --font-stack: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, Helvetica, 'Segoe UI', Arial, sans-serif;
+  --font-stack: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, Helvetica,
+    "Segoe UI", Arial, sans-serif;
   --color-subtle: #f0ebf5;
   --color-mid: #8279e0;
   --color-bold: #6f00ff;
@@ -59,9 +60,30 @@
   font-size: 0.9em;
   font-weight: 600;
   cursor: pointer;
-  transition: background 200ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 .hermesButton:hover {
   background: var(--color-mid);
+}
+
+.loading {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
